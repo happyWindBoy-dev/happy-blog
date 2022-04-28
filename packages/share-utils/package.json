@@ -1,0 +1,30 @@
+{
+  "name": "@znxxj/share-utils",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "郑南欣 <zhengnanxin@bytedance.com>",
+  "homepage": "https://github.com/happyWindBoy-dev/happy-blog#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://bnpm.byted.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happyWindBoy-dev/happy-blog.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "tsc": "tsc ./src/index.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/happyWindBoy-dev/happy-blog/issues"
+  }
+}

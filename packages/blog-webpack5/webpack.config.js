@@ -3,11 +3,23 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
+/**
+ *@TODO
+ * - hmr
+ * - scss
+ * - windicss or tailwindcsss
+ * - svg png jpg json
+ * - extends tsConfig eslintrc
+ * ----------
+ * - webpack merge
+ * - vue-use
+ * - useFetch
+ */
+
 module.exports = {
   entry: "./src/main.js",
   output: {
-    // 打包后项目文件在硬盘中的存储位置
-    filename: "[name].js", // [name]占位符的写法可支持多入口
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -15,6 +27,10 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: "vue-loader",
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },

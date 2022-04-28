@@ -10,3 +10,8 @@ console.log('hello vue', )
 
 </template>
 
+<style lang="scss">
+#app {
+    color: red;
+}
+</style>
