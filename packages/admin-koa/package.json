@@ -1,0 +1,22 @@
+{
+  "name": "@znxxj/admin-koa",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "xiexujie <xiexujie@bytedance.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/admin-koa.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://bnpm.byted.org/"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
