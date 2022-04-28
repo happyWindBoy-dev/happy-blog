@@ -2,7 +2,7 @@
   "name": "@znxxj/admin-koa",
   "version": "0.0.0",
   "description": "> TODO: description",
-  "author": "xiexujie <xiexujie@bytedance.com>",
+  "author": "pxdbj233",
   "homepage": "",
   "license": "ISC",
   "main": "lib/admin-koa.js",
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://bnpm.byted.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"

@@ -2,7 +2,7 @@
   "name": "@znxxj/blog-webpack5",
   "version": "0.0.0",
   "description": "> TODO: description",
-  "author": "xiexujie <xiexujie@bytedance.com>",
+  "author": "pxdbj233",
   "homepage": "",
   "license": "ISC",
   "main": "lib/blog-webpack5.js",
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://bnpm.byted.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "dev": "webpack serve --config webpack.config.js"
