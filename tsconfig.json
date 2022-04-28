@@ -16,5 +16,6 @@
     "node_modules",
     "**/*.spec.ts",
     "**/webpack.config.js"
+    
   ]
  }
