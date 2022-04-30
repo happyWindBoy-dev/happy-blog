@@ -1,6 +1,5 @@
 {
   "name": "blog-admin-vite",
-  "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
