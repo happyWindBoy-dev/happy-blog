@@ -6,7 +6,7 @@ console.log('hello vue', )
 </script>
 
 <template>
-<div class="mt-1px">Hello Vue</div>
+<div class="mt-1px">Hello Vue x</div>
   
 
 </template>
