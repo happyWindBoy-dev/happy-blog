@@ -1,6 +1,7 @@
 const { VueLoaderPlugin } = require("vue-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 const path = require("path");
 
 /**
@@ -31,6 +32,12 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+        // exclude: path.resolve(__dirname, "node_modules"),
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+        // exclude: path.resolve(__dirname, "node_modules"),
       },
     ],
   },
@@ -42,6 +49,7 @@ module.exports = {
       filename: "index.html",
     }),
     new CleanWebpackPlugin(),
+    new WindiCSSWebpackPlugin(),
   ],
   devServer: {
     static: {

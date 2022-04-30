@@ -19,7 +19,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }  
+    }
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.21.0",

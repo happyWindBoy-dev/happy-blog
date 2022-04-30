@@ -2,7 +2,6 @@
   "name": "@znxxj/share-utils",
   "version": "1.0.0",
   "description": "> TODO: description",
-  "author": "郑南欣 <zhengnanxin@bytedance.com>",
   "homepage": "https://github.com/happyWindBoy-dev/happy-blog#readme",
   "license": "ISC",
   "main": "src/index.js",
@@ -14,7 +13,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://bnpm.byted.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
