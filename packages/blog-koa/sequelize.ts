@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize("koadb", "root", "xxj199889", {
-  host: "localhost",
+  host: "124.220.189.226",
   dialect: "mysql",
 });
 

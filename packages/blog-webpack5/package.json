@@ -1,6 +1,6 @@
 {
   "name": "@znxxj/blog-webpack5",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "pxdbj233",
   "homepage": "",
@@ -34,7 +34,10 @@
     "windicss-webpack-plugin": "^1.7.2"
   },
   "dependencies": {
+    "@sentry/tracing": "^6.19.7",
+    "@sentry/vue": "^6.19.7",
     "@znxxj/share-utils": "^1.0.0",
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
   }
 }
