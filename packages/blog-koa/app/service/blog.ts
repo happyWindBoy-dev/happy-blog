@@ -1,16 +1,26 @@
+import { BlogContent } from "../../type/interface";
+
 const { Blog } = require("../model/blog");
 
 async function getArticleList() {
   return await Blog.findAll();
 }
 
-async function createArticle() {
+async function createArticle(blog: BlogContent) {
+  const { author, title, description, content } = blog;
   return await Blog.create({
-    author: "xxj",
-    content: "hello blog",
-    title: "my first blog",
-    description: "hihi",
+    author,
+    title,
+    description,
+    content,
   });
 }
+
+// async function updateArticle(blog: BlogContent) {
+
+// }
+
+// async function deleteArticle() {
+// }
 
 export { getArticleList, createArticle };

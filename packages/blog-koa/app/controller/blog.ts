@@ -1,5 +1,10 @@
 import { Controller, Body, Get, Post } from "routing-controllers";
-const { getArticleList, createArticle } = require("../service/blog.ts");
+import { BlogContent } from "../../type/interface";
+const {
+  getArticleList,
+  createArticle,
+  updateArticle,
+} = require("../service/blog.ts");
 
 @Controller("/article")
 export class ArticleController {
@@ -11,9 +16,15 @@ export class ArticleController {
   }
 
   @Post("/create")
-  async post(@Body() user: any) {
-    await createArticle();
-    return "Saving user...";
+  async post(@Body() blog: BlogContent) {
+    const res = await createArticle(blog);
+    return res;
+  }
+
+  @Post("/update")
+  async update(@Body() blog: BlogContent) {
+    await updateArticle(blog);
+    return "Update updateArticle...";
   }
 
   // @Put("/users/:id")
