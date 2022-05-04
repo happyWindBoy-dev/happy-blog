@@ -1,7 +1,9 @@
 const { Blog } = require("../model/blog");
 
 async function getArticleList() {
-  return await Blog.findAll();
+  return await Blog.findAll({
+    raw: true,
+  });
 }
 
 async function createArticle() {
