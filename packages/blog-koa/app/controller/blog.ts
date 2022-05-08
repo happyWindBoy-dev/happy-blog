@@ -1,9 +1,10 @@
-import { Controller, Body, Get, Post } from "routing-controllers";
+import { Controller, Body, Get, Post, QueryParam } from "routing-controllers";
 import { BlogContent } from "../../type/interface";
 const {
   getArticleList,
   createArticle,
   updateArticle,
+  getArticleDetail,
 } = require("../service/blog.ts");
 
 @Controller("/article")
@@ -20,11 +21,17 @@ export class ArticleController {
     return res;
   }
 
-  @Post("/update")
-  async update(@Body() blog: BlogContent) {
-    await updateArticle(blog);
-    return "Update updateArticle...";
+  @Get("/detail")
+  async getDetail(@QueryParam("id") id: string) {
+    const res = await getArticleDetail(id);
+    return res;
   }
+
+  // @Post("/update")
+  // async update(@Body() blog: BlogContent) {
+  //   await updateArticle(blog);
+  //   return "Update updateArticle...";
+  // }
 
   // @Put("/users/:id")
   // put(@Param("id") id: number, @Body() user: any) {

@@ -1,22 +1,26 @@
 <template>
   <div class="mb-40px flex">
-    <!-- <n-icon size="20">
-      <Document />
-    </n-icon> -->
     <div>
-      <p class="title">{{ detail.title }}</p>
-      <p>{{ detail.updatedAt }}</p>
+      <p class="title">{{ detail?.title }}</p>
+      <p>{{ detail?.updatedAt }}</p>
+      <p>{{ describe }}</p>
     </div>
+    <router-link :to="{ path: '/editor', query: { id: props.detail.id }}">
+      <n-button>编辑</n-button>
+    </router-link>
   </div>
 </template>
 
-<script setup>
-import { Document } from "@vicons/ionicons5";
-import { ref } from "vue";
+<script setup lang="ts">
+import { filterHTMLTag } from "../utils/markdown";
 
 const props = defineProps({
   detail: Object,
 });
+
+const describe = filterHTMLTag(props.detail?.content);
+
+console.log(props.detail, describe);
 </script>
 
 <style lang="scss" scoped>

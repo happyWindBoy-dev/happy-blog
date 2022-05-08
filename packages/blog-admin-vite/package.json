@@ -2,6 +2,9 @@
   "name": "blog-admin-vite",
   "private": true,
   "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

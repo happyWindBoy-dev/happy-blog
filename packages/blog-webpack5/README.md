@@ -14,7 +14,7 @@ https://sentry.io/organizations/bytedance-h6/issues/?project=6374015
 ### 页面
 - [ ] 博客列表页 (列表展示, 一键换肤, 分页加载)
 - [ ] 博客详情页
-- [ ] 博客后台(支持新增角色, 选择头像, 后台支持增删改查博客)
+- [ ] 博客后台(支持新增角色, 选择角色, 后台支持增删改查博客)
 
 ### 工程化
 - [ ] vue eslint prettier 完善

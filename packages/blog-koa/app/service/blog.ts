@@ -18,6 +18,15 @@ async function createArticle(blog: BlogContent) {
   });
 }
 
+async function getArticleDetail(id: string) {
+  return await Blog.findAll({
+    raw: true,
+    where: {
+      id,
+    },
+  });
+}
+
 // async function updateArticle(blog: BlogContent) {
 
 // }
@@ -25,4 +34,4 @@ async function createArticle(blog: BlogContent) {
 // async function deleteArticle() {
 // }
 
-export { getArticleList, createArticle };
+export { getArticleList, createArticle, getArticleDetail };
