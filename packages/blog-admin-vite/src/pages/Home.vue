@@ -17,7 +17,7 @@
 <script setup>
 import { ref } from "vue";
 import { useGetRequest } from "@znxxj/share-utils/hooks/useToFetch";
-import ListItem from '../components/ListItem.vue'
+import ListItem from "../components/ListItem.vue";
 
 const { isFetching, error, data } = useGetRequest("/api/article/list");
 </script>

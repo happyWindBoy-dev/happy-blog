@@ -22,10 +22,10 @@
   <!-- <footer class="flex justify-end mt-10"></footer> -->
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { useFetch } from "@vueuse/core";
-import { host } from "@znxxj/share-utils/constants/url.ts";
+import { host } from "@znxxj/share-utils/constants/url";
 
 const text = ref("");
 const title = ref("");
