@@ -12,18 +12,18 @@ const Blog = sqlClient.define(
     author: {
       type: Sequelize.STRING,
     },
-    content: {
-      type: Sequelize.STRING,
-    },
     title: {
       type: Sequelize.STRING,
     },
-    description: {
+    html_content: {
+      type: Sequelize.STRING,
+    },
+    markdown_content: {
       type: Sequelize.STRING,
     },
   },
   {
-    tableName: "tbl_blog",
+    tableName: "tbl_blog_2",
     freezeTableName: true,
   }
 );

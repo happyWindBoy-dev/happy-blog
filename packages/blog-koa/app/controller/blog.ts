@@ -1,5 +1,6 @@
 import { Controller, Body, Get, Post, QueryParam } from "routing-controllers";
 import { BlogContent } from "../../type/interface";
+import { deleteArticle } from "../service/blog";
 const {
   getArticleList,
   createArticle,
@@ -21,25 +22,21 @@ export class ArticleController {
     return res;
   }
 
+  @Post("/update")
+  async update(@Body() blog: BlogContent) {
+    const res = await updateArticle(blog);
+    return res;
+  }
+
   @Get("/detail")
   async getDetail(@QueryParam("id") id: string) {
     const res = await getArticleDetail(id);
     return res;
   }
 
-  // @Post("/update")
-  // async update(@Body() blog: BlogContent) {
-  //   await updateArticle(blog);
-  //   return "Update updateArticle...";
-  // }
-
-  // @Put("/users/:id")
-  // put(@Param("id") id: number, @Body() user: any) {
-  //   return "Updating a user...";
-  // }
-
-  // @Delete("/users/:id")
-  // remove(@Param("id") id: number) {
-  //   return "Removing user...";
-  // }
+  @Post("/delete")
+  async delete(@Body() blog: BlogContent) {
+    const res = await deleteArticle(blog.id);
+    return res;
+  }
 }

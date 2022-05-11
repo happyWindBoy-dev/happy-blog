@@ -9,17 +9,20 @@ async function getArticleList() {
 }
 
 async function createArticle(blog: BlogContent) {
-  const { author, title, description, content } = blog;
-  return await Blog.create({
+  const { author, title, html_content, markdown_content } = blog;
+  const newBlog = await Blog.create({
     author,
     title,
-    description,
-    content,
+    html_content,
+    markdown_content,
   });
+  console.log("newBlog", newBlog);
+
+  return newBlog.dataValues;
 }
 
 async function getArticleDetail(id: string) {
-  return await Blog.findAll({
+  return await Blog.findOne({
     raw: true,
     where: {
       id,
@@ -27,11 +30,29 @@ async function getArticleDetail(id: string) {
   });
 }
 
-// async function updateArticle(blog: BlogContent) {
+async function updateArticle(blog: BlogContent) {
+  const { id, title, html_content, markdown_content } = blog;
+  const blogItem = await Blog.findOne({
+    where: {
+      id,
+    },
+  });
+  return await blogItem.update({ title, html_content, markdown_content });
+}
 
-// }
+async function deleteArticle(id: string) {
+  const blogItem = await Blog.findOne({
+    where: {
+      id,
+    },
+  });
+  return blogItem.destroy();
+}
 
-// async function deleteArticle() {
-// }
-
-export { getArticleList, createArticle, getArticleDetail };
+export {
+  getArticleList,
+  createArticle,
+  getArticleDetail,
+  updateArticle,
+  deleteArticle,
+};

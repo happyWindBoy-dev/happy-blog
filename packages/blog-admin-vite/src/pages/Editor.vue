@@ -18,7 +18,7 @@
       Submit
     </n-button>
   </div>
-  <v-md-editor v-model="text" height="450px"></v-md-editor>
+  <v-md-editor v-model="content" height="450px"></v-md-editor>
   <!-- <footer class="flex justify-end mt-10"></footer> -->
 </template>
 
@@ -30,35 +30,93 @@ import { host } from "@znxxj/share-utils/constants/url";
 import VueMarkdownEditor, { xss } from "@kangc/v-md-editor";
 import { useRouter } from "vue-router";
 
-const text = ref("");
-const inputTitle = ref("")
+const inputTitle = ref("");
+const inputContent = ref("");
 
 const router = useRouter();
-
 const articleId = router.currentRoute.value.query.id;
-const { data } = useGetRequest(`/api/article/detail?id=${articleId}`);
+const data = articleId ? getArticleDetail() : null;
 
 const title = computed({
   get() {
-    return inputTitle.value || data.value?.[0].title
+    return inputTitle.value || data?.value?.title || "";
   },
   set(value: string) {
-    inputTitle.value = value
-  }
+    inputTitle.value = value;
+  },
+});
+const content = computed({
+  get() {
+    return inputContent.value || data?.value?.markdown_content || "";
+  },
+  set(value: string) {
+    inputContent.value = value;
+  },
 });
 
+function getArticleDetail() {
+  const { data } = useGetRequest(`/api/article/detail?id=${articleId}`);
+  return data;
+}
 
 function onSubmit() {
-  const content = xss.process(
-    VueMarkdownEditor.vMdParser.themeConfig.markdownParser.render(text.value)
+  if (!articleId) {
+    // 新建一篇文章
+    postNewArticle();
+  } else {
+    // 更新文章
+    updateOldArticle();
+  }
+}
+
+async function postNewArticle() {
+  const markdownContent = inputContent.value;
+  const htmlContent = xss.process(
+    VueMarkdownEditor.vMdParser.themeConfig.markdownParser.render(
+      markdownContent
+    )
   );
-  const res = useFetch(`${host}/api/article/create`)
+
+  const { data } = await useFetch(`${host}/api/article/create`)
     .post({
       title: title.value,
       author: "pxdbj2333",
-      content,
+      markdown_content: markdownContent,
+      html_content: htmlContent,
     })
     .json();
+    console.log('data', data);
+  alert(data.value ? "创建成功, 自动帮您跳转至展示页面" : "创建失败");
+  
+  
+  if (data.value) {
+    router.replace({
+      path: "article",
+      query: {
+        id: data.value.id,
+      },
+    });
+  }
+}
+
+async function updateOldArticle() {
+  const markdownContent = inputContent.value;
+  const htmlContent = xss.process(
+    VueMarkdownEditor.vMdParser.themeConfig.markdownParser.render(
+      markdownContent
+    )
+  );
+
+  const { data } = await useFetch(`${host}/api/article/update`)
+    .post({
+      id: articleId,
+      title: title.value,
+      author: "pxdbj2333",
+      markdown_content: markdownContent,
+      html_content: htmlContent,
+    })
+    .json();
+  alert(data.value ? "更新成功" : "更新失败");
 }
 </script>
 
