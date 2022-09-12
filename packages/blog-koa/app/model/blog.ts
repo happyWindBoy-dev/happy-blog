@@ -1,8 +1,8 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const sqlClient = require("../../sequelize.ts");
+const { Sequelize, DataTypes } = require('sequelize');
+const sqlClient = require('../../sequelize.ts');
 
 const Blog = sqlClient.define(
-  "blog",
+  'blog',
   {
     id: {
       type: DataTypes.UUID,
@@ -23,7 +23,7 @@ const Blog = sqlClient.define(
     },
   },
   {
-    tableName: "tbl_blog_2",
+    tableName: 'tbl_blog_2',
     freezeTableName: true,
   }
 );

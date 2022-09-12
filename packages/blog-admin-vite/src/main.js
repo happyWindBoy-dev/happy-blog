@@ -1,13 +1,13 @@
-import { createApp } from "vue";
-import "virtual:windi.css";
-import App from "./App.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
-import VueMarkdownEditor from "@kangc/v-md-editor";
-import "@kangc/v-md-editor/lib/style/base-editor.css";
-import vuepressTheme from "@kangc/v-md-editor/lib/theme/vuepress.js";
-import "@kangc/v-md-editor/lib/theme/style/vuepress.css";
-import Prism from "prismjs";
-import { routes } from "./router";
+import { createApp } from 'vue';
+import 'virtual:windi.css';
+import App from './App.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import VueMarkdownEditor from '@kangc/v-md-editor';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+import Prism from 'prismjs';
+import { routes } from './router';
 
 VueMarkdownEditor.use(vuepressTheme, {
   Prism,
@@ -24,4 +24,4 @@ const router = createRouter({
 app.use(router);
 app.use(VueMarkdownEditor);
 
-app.mount("#app");
+app.mount('#app');

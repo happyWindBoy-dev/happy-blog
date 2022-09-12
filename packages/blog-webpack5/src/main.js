@@ -1,9 +1,9 @@
-import { createApp } from "vue";
-import * as Sentry from "@sentry/vue";
-import { BrowserTracing } from "@sentry/tracing";
-import { createRouter } from "vue-router";
-import App from "./App.vue";
-import "windi.css";
+import { createApp } from 'vue';
+import * as Sentry from '@sentry/vue';
+import { BrowserTracing } from '@sentry/tracing';
+import { createRouter } from 'vue-router';
+import App from './App.vue';
+import 'windi.css';
 
 const app = createApp(App);
 // const router = createRouter({
@@ -13,11 +13,11 @@ const app = createApp(App);
 // Inspire by Sentry: https://docs.sentry.io/platforms/javascript/
 Sentry.init({
   app,
-  dsn: "https://bd05332124b54823857f37e39dfe8eb2@o1228307.ingest.sentry.io/6374015",
+  dsn: 'https://bd05332124b54823857f37e39dfe8eb2@o1228307.ingest.sentry.io/6374015',
   integrations: [
     new BrowserTracing({
       // routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-      tracingOrigins: ["localhost", "my-site-url.com", /^\//],
+      tracingOrigins: ['localhost', 'my-site-url.com', /^\//],
     }),
   ],
   tracesSampleRate: 1.0,
@@ -25,4 +25,4 @@ Sentry.init({
   logErrors: true,
 });
 
-app.mount("#app");
+app.mount('#app');

@@ -1,20 +1,23 @@
-<script setup>
-import { Bulb } from "@vicons/ionicons5";
+<script setup lang="ts">
+import { Bulb } from '@vicons/ionicons5';
+import { darkTheme } from 'naive-ui';
 </script>
 
 <template>
-  <div class="p-16px">
-    <header class="header">
-      <router-link to="/">
-        <n-icon class="icon" size="20">
-          <Bulb />
-        </n-icon>
-        Lighting
-      </router-link>
-    </header>
+  <n-config-provider :theme="darkTheme">
+    <div class="p-16px">
+      <header class="header">
+        <router-link to="/">
+          <n-icon class="icon" size="20">
+            <Bulb />
+          </n-icon>
+          Lighting
+        </router-link>
+      </header>
 
-    <router-view></router-view>
-  </div>
+      <router-view></router-view>
+    </div>
+  </n-config-provider>
 </template>
 
 <style lang="scss">
@@ -23,8 +26,8 @@ import { Bulb } from "@vicons/ionicons5";
 }
 
 @font-face {
-  font-family: "exo";
-  src: url("./assets/No.025-Sounso-Warm-2.ttf");
+  font-family: 'exo';
+  src: url('./assets/No.025-Sounso-Warm-2.ttf');
 }
 
 .header {

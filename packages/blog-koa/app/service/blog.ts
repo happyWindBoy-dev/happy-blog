@@ -1,6 +1,6 @@
-import { BlogContent } from "../../type/interface";
+import { BlogContent } from '../../type/interface';
 
-const { Blog } = require("../model/blog");
+const { Blog } = require('../model/blog');
 
 async function getArticleList() {
   return await Blog.findAll({
@@ -16,7 +16,7 @@ async function createArticle(blog: BlogContent) {
     html_content,
     markdown_content,
   });
-  console.log("newBlog", newBlog);
+  console.log('newBlog', newBlog);
 
   return newBlog.dataValues;
 }

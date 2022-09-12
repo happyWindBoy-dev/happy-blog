@@ -5,18 +5,18 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["prettier"],
+  plugins: ['prettier'],
   rules: {
-    "prettier/prettier": "error",
-    "@typescript-eslint/no-var-requires": "off",
+    'prettier/prettier': 'error',
+    '@typescript-eslint/no-var-requires': 'off',
   },
 };
