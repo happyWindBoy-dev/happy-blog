@@ -11,15 +11,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useGetRequest } from "@znxxj/share-utils/hooks/useToFetch";
-import { useRouter } from "vue-router";
-const content = ref("hahahaha");
+import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const articleId = router.currentRoute.value.query.id;
 const { data } = useGetRequest(`/api/article/detail?id=${articleId}`);
-console.log("data", data);
+console.log('data', data);
 </script>
 
 <style scoped>

@@ -23,15 +23,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useFetch } from "@vueuse/core";
-import { useGetRequest } from "@znxxj/share-utils/hooks/useToFetch";
-import { host } from "@znxxj/share-utils/constants/url";
-import VueMarkdownEditor, { xss } from "@kangc/v-md-editor";
-import { useRouter } from "vue-router";
+import { ref, computed } from 'vue';
+import { useFetch } from '@vueuse/core';
+import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
+import { host } from '@znxxj/share-utils/constants/url';
+import VueMarkdownEditor, { xss } from '@kangc/v-md-editor';
+import { useRouter } from 'vue-router';
 
-const inputTitle = ref("");
-const inputContent = ref("");
+const inputTitle = ref('');
+const inputContent = ref('');
 
 const router = useRouter();
 const articleId = router.currentRoute.value.query.id;
@@ -39,7 +39,7 @@ const data = articleId ? getArticleDetail() : null;
 
 const title = computed({
   get() {
-    return inputTitle.value || data?.value?.title || "";
+    return inputTitle.value || data?.value?.title || '';
   },
   set(value: string) {
     inputTitle.value = value;
@@ -47,7 +47,7 @@ const title = computed({
 });
 const content = computed({
   get() {
-    return inputContent.value || data?.value?.markdown_content || "";
+    return inputContent.value || data?.value?.markdown_content || '';
   },
   set(value: string) {
     inputContent.value = value;
@@ -80,18 +80,17 @@ async function postNewArticle() {
   const { data } = await useFetch(`${host}/api/article/create`)
     .post({
       title: title.value,
-      author: "pxdbj2333",
+      author: 'pxdbj2333',
       markdown_content: markdownContent,
       html_content: htmlContent,
     })
     .json();
-    console.log('data', data);
-  alert(data.value ? "创建成功, 自动帮您跳转至展示页面" : "创建失败");
-  
-  
+  console.log('data', data);
+  alert(data.value ? '创建成功, 自动帮您跳转至展示页面' : '创建失败');
+
   if (data.value) {
     router.replace({
-      path: "article",
+      path: 'article',
       query: {
         id: data.value.id,
       },
@@ -111,12 +110,12 @@ async function updateOldArticle() {
     .post({
       id: articleId,
       title: title.value,
-      author: "pxdbj2333",
+      author: 'pxdbj2333',
       markdown_content: markdownContent,
       html_content: htmlContent,
     })
     .json();
-  alert(data.value ? "更新成功" : "更新失败");
+  alert(data.value ? '更新成功' : '更新失败');
 }
 </script>
 

@@ -15,10 +15,10 @@
 </template>
 
 <script setup lang="ts">
-import { useGetRequest } from "@znxxj/share-utils/hooks/useToFetch";
-import ListItem from "../components/ListItem.vue";
+import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
+import ListItem from '../components/ListItem.vue';
 
-const { isFetching, error, data } = useGetRequest("/api/article/list");
+const { isFetching, error, data } = useGetRequest('/api/article/list');
 </script>
 
 <style scoped>
