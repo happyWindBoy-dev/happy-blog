@@ -1,18 +1,23 @@
 <script setup lang="ts">
 import { Bulb } from '@vicons/ionicons5';
-import { darkTheme } from 'naive-ui';
+import { useDark, useToggle } from '@vueuse/core';
+import { darkTheme, lightTheme } from 'naive-ui';
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <n-config-provider :theme="darkTheme">
+  <n-config-provider :theme="isDark ? darkTheme : lightTheme">
     <div class="p-16px">
-      <header class="header">
+      <header class="header sticky">
         <router-link to="/">
           <n-icon class="icon" size="20">
             <Bulb />
           </n-icon>
           Lighting
         </router-link>
+        <n-button @click="toggleDark">darkTheme/lightTheme</n-button>
       </header>
 
       <router-view></router-view>
@@ -23,6 +28,7 @@ import { darkTheme } from 'naive-ui';
 <style lang="scss">
 #app {
   font-family: Montserrat, sans-serif;
+  background: var(--color-background);
 }
 
 @font-face {
@@ -31,6 +37,8 @@ import { darkTheme } from 'naive-ui';
 }
 
 .header {
+  top: 20px;
+  left: 0px;
   margin-bottom: 40px;
   display: flex;
   align-items: center;
@@ -40,7 +48,5 @@ import { darkTheme } from 'naive-ui';
   .icon {
     color: #2c30ac;
   }
-  /* color: #2a2799; */
-  /* color: #fff; */
 }
 </style>

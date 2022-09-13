@@ -2,7 +2,11 @@
   <div class="wrap">
     <div class="flex justify-end">
       <router-link to="/editor">
-        <n-button round class="w-200px h-60px font-bold" color="#2c30ac">
+        <n-button
+          round
+          class="w-200px h-60px font-bold bg-green-400 dark:bg-green-500"
+          color="#2c30ac"
+        >
           Add New
         </n-button>
       </router-link>

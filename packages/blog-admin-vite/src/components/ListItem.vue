@@ -1,13 +1,18 @@
 <template>
   <div class="list-item" @click="openDetail">
     <div>
-      <p class="title">{{ detail?.title }}</p>
+      <p class="title text-blue">
+        {{ detail?.title }}
+      </p>
       <p>{{ detail?.updatedAt }}</p>
-      <p class="describe">{{ describe }}</p>
+      <p class="describe">
+        {{ describe }}
+      </p>
     </div>
     <!-- <router-link
       :to="{ path: '/editor', query: { id: props.detail?.id ?? 0 } }"
-    > --><!-- </router-link> -->
+    > -->
+    <!-- </router-link> -->
     <n-button @click.stop="onEdit">编辑</n-button>
     <n-button @click.stop="onDelete">删除</n-button>
   </div>
@@ -59,14 +64,17 @@ async function onDelete() {
   color: #2c3e50;
   margin-bottom: 20px;
   cursor: pointer;
-  &:hover {
-    background-color: aliceblue;
+
+  /* &:hover {
+    background-color: var(--color-venn-1);
     transition: all 0.2s;
-  }
+  } */
+
   .title {
     font-size: 22px;
     font-weight: bold;
   }
+
   .describe {
     overflow: hidden;
     white-space: nowrap;
