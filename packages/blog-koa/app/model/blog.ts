@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sqlClient = require('../../sequelize.ts');
+const sqlClient = require('../../sequelize');
 
 const Blog = sqlClient.define(
   'blog',

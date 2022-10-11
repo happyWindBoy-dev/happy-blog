@@ -6,7 +6,7 @@ const {
   createArticle,
   updateArticle,
   getArticleDetail,
-} = require('../service/blog.ts');
+} = require('../service/blog');
 
 @Controller('/article')
 export class ArticleController {

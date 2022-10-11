@@ -18,7 +18,9 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "dev": "nodemon app.ts",
-    "server": "nodemon app.ts"
+    "server": "nodemon app.ts",
+    "build": "tsc",
+    "online": "nodemon ./dist/app.js"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",
