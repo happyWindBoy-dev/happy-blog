@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
+import { useGetRequest } from '../hooks/useToFetch';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

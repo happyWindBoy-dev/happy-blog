@@ -1,7 +1,8 @@
 import { useFetch } from '@vueuse/core';
-import { host } from '../constants/url';
 
-export function useGetRequest(path:string) {
+export const host = 'http://124.220.189.226:4000';
+
+export function useGetRequest(path: string) {
   return useFetch(`${host}${path}`).get().json();
 }
 

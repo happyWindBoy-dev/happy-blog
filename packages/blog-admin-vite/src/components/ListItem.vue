@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { usePostRequest } from "@znxxj/share-utils/hooks/useToFetch";
+import { usePostRequest, host } from '../hooks/useToFetch';
 import { useRouter } from "vue-router";
 import { filterHTMLTag } from "../utils/markdown";
 

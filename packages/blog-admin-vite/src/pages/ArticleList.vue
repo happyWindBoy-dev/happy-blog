@@ -2,11 +2,7 @@
   <div class="wrap">
     <div class="flex justify-end">
       <router-link to="/editor">
-        <n-button
-          round
-          class="w-200px h-60px font-bold bg-green-400 dark:bg-green-500"
-          color="#2c30ac"
-        >
+        <n-button round class="w-200px h-60px font-bold bg-green-400 dark:bg-green-500" color="#2c30ac">
           Add New
         </n-button>
       </router-link>
@@ -19,10 +15,10 @@
 </template>
 
 <script setup lang="ts">
-import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
+import { useGetRequest } from '../hooks/useToFetch';
 import ListItem from '../components/ListItem.vue';
 
-const { isFetching, error, data } = useGetRequest('/api/article/list');
+const { data } = useGetRequest('/api/article/list');
 </script>
 
 <style scoped>

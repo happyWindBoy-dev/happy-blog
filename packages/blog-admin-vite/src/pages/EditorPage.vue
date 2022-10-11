@@ -25,8 +25,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useFetch } from '@vueuse/core';
-import { useGetRequest } from '@znxxj/share-utils/hooks/useToFetch';
-import { host } from '@znxxj/share-utils/constants/url';
+import { useGetRequest, host } from '../hooks/useToFetch';
 import VueMarkdownEditor, { xss } from '@kangc/v-md-editor';
 import { useRouter } from 'vue-router';
 
