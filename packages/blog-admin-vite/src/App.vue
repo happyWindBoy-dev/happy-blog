@@ -15,7 +15,7 @@ const toggleDark = useToggle(isDark);
           <n-icon class="icon" size="20">
             <Bulb />
           </n-icon>
-          Lighting
+          dark~~
         </router-link>
         <n-button @click="toggleDark">darkTheme/lightTheme</n-button>
       </header>
