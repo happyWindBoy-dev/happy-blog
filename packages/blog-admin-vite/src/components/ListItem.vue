@@ -1,11 +1,11 @@
 <template>
-  <div class="list-item" @click="openDetail">
+  <div class="list-item-wrapper" @click="openDetail">
     <div>
-      <p class="title text-blue">
+      <AuthorCard :detail="detail" />
+      <p class="title font-semibold my-4">
         {{ detail?.title }}
       </p>
-      <p>{{ detail?.updatedAt }}</p>
-      <p class="describe">
+      <p class="describe mb-4">
         {{ describe }}
       </p>
     </div>
@@ -13,15 +13,16 @@
       :to="{ path: '/editor', query: { id: props.detail?.id ?? 0 } }"
     > -->
     <!-- </router-link> -->
-    <n-button @click.stop="onEdit">编辑</n-button>
+    <n-button class="mr-4" @click.stop="onEdit">编辑</n-button>
     <n-button @click.stop="onDelete">删除</n-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { usePostRequest, host } from '../hooks/useToFetch';
-import { useRouter } from "vue-router";
-import { filterHTMLTag } from "../utils/markdown";
+import { usePostRequest } from '../hooks/useToFetch';
+import { useRouter } from 'vue-router';
+import { filterHTMLTag } from '../utils/markdown';
+import AuthorCard from './AuthorCard.vue';
 
 const props = defineProps({
   detail: Object,
@@ -33,7 +34,7 @@ const router = useRouter();
 
 async function openDetail() {
   router.push({
-    path: "article",
+    path: 'article',
     query: {
       id: props.detail?.id,
     },
@@ -41,17 +42,17 @@ async function openDetail() {
 }
 async function onEdit() {
   router.push({
-    path: "editor",
+    path: 'editor',
     query: {
       id: props.detail?.id,
     },
   });
 }
 async function onDelete() {
-  const { data } = await usePostRequest("/api/article/delete", {
+  const { data } = await usePostRequest('/api/article/delete', {
     id: props.detail?.id ?? 0,
   });
-  alert(data.value ? "删除成功" : "删除失败");
+  alert(data.value ? '删除成功' : '删除失败');
   if (data.value) {
     window.location.reload();
   }
@@ -59,9 +60,9 @@ async function onDelete() {
 </script>
 
 <style lang="scss" scoped>
-.list-item {
+.list-item-wrapper {
   width: 100%;
-  color: #2c3e50;
+  color: var(--color-text-2);
   margin-bottom: 20px;
   cursor: pointer;
 
@@ -75,10 +76,20 @@ async function onDelete() {
     font-weight: bold;
   }
 
+  .updatedAt {
+    color: var(--color-text-secondary);
+  }
+
   .describe {
-    overflow: hidden;
+    color: var(--color-text-secondary);
+    /* overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 }
 </style>

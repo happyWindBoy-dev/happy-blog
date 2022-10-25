@@ -44,6 +44,7 @@ const title = computed({
     inputTitle.value = value;
   },
 });
+
 const content = computed({
   get() {
     return inputContent.value || data?.value?.markdown_content || '';

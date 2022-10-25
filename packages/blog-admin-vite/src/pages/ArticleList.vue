@@ -1,13 +1,5 @@
 <template>
   <div class="wrap">
-    <div class="flex justify-end">
-      <router-link to="/editor">
-        <n-button round class="w-200px h-60px font-bold bg-green-400 dark:bg-green-500" color="#2c30ac">
-          Add New
-        </n-button>
-      </router-link>
-    </div>
-
     <section class="flex justify-center flex-col items-start mt-30px">
       <ListItem v-for="item in data" :key="item.id" :detail="item" />
     </section>

@@ -44,6 +44,14 @@
   --syntax-regex: #3600d6;
   --syntax-fn: #3d5afe;
   --prefers-dark: false;
+
+  --color-background-2: #f6f4f0;
+  --color-text-2: #2b2d42;
+  --color-text-title: #2b2d41;
+  --color-text-secondary: #797b8f;
+  --color-background-primary-btn: #2b2d42;
+  --color-text-btn: #30303b;
+  --color-border: #d5d5d4;
 }
 
 html[class='dark'] {
@@ -92,8 +100,14 @@ html[class='dark'] {
   --syntax-regex: #ffd700;
   --syntax-fn: rgb(0, 190, 255);
   --prefers-dark: true;
-}
 
-.text-blue {
-  color: var(--color-gray-1000);
+  --color-background-2: hsl(210deg, 30%, 8%);
+  --color-text-2: #2b2d42;
+  --color-text-title: #2b2d41;
+  // #1d1f31
+  // #6d778b
+  --color-text-secondary: #797b8f;
+  --color-background-primary-btn: #2b2d42;
+  --color-text-btn: #30303b;
+  --color-border: #d5d5d4;
 }
