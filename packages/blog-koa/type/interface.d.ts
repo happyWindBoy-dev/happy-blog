@@ -4,4 +4,5 @@ export interface BlogContent {
   title: string;
   markdown_content: string;
   html_content: string;
+  cover_img_url: string;
 }

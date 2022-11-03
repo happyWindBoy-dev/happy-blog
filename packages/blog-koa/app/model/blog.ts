@@ -21,6 +21,10 @@ const Blog = sqlClient.define(
     markdown_content: {
       type: Sequelize.STRING,
     },
+    cover_img_url: {
+      type: Sequelize.STRING,
+      defaultValue: 'https://www.taskade.com/images/wallpapers/0052.jpg',
+    },
   },
   {
     tableName: 'tbl_blog_2',

@@ -70,7 +70,7 @@ function onSubmit() {
 }
 
 async function postNewArticle() {
-  const markdownContent = inputContent.value;
+  const markdownContent = content.value;
   const htmlContent = xss.process(
     VueMarkdownEditor.vMdParser.themeConfig.markdownParser.render(
       markdownContent
@@ -99,7 +99,7 @@ async function postNewArticle() {
 }
 
 async function updateOldArticle() {
-  const markdownContent = inputContent.value;
+  const markdownContent = content.value;
   const htmlContent = xss.process(
     VueMarkdownEditor.vMdParser.themeConfig.markdownParser.render(
       markdownContent

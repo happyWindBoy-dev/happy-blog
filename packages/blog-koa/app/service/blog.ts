@@ -9,12 +9,13 @@ async function getArticleList() {
 }
 
 async function createArticle(blog: BlogContent) {
-  const { author, title, html_content, markdown_content } = blog;
+  const { author, title, html_content, markdown_content, cover_img_url } = blog;
   const newBlog = await Blog.create({
     author,
     title,
     html_content,
     markdown_content,
+    cover_img_url,
   });
   console.log('newBlog', newBlog);
 
@@ -31,13 +32,18 @@ async function getArticleDetail(id: string) {
 }
 
 async function updateArticle(blog: BlogContent) {
-  const { id, title, html_content, markdown_content } = blog;
+  const { id, title, html_content, markdown_content, cover_img_url } = blog;
   const blogItem = await Blog.findOne({
     where: {
       id,
     },
   });
-  return await blogItem.update({ title, html_content, markdown_content });
+  return await blogItem.update({
+    title,
+    html_content,
+    markdown_content,
+    cover_img_url,
+  });
 }
 
 async function deleteArticle(id: string) {
