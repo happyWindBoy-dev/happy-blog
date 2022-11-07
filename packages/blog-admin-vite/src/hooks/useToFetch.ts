@@ -4,7 +4,6 @@ const productHost = 'http://124.220.189.226:4000';
 const developHost = 'http://127.0.0.1:4000';
 
 export const host = productHost;
-console.log(host, 'host');
 
 export function useGetRequest(path: string) {
   return useFetch(`${host}${path}`).get().json();

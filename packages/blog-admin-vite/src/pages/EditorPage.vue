@@ -96,7 +96,7 @@ async function postNewArticle() {
       html_content: htmlContent,
     })
     .json();
-  console.log('data', data);
+
   alert(data.value ? '创建成功, 自动帮您跳转至展示页面' : '创建失败');
 
   if (data.value) {

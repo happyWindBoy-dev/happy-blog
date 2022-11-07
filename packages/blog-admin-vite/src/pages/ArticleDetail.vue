@@ -17,7 +17,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const articleId = router.currentRoute.value.query.id;
 const { data } = useGetRequest(`/api/article/detail?id=${articleId}`);
-console.log('data', data);
 </script>
 
 <style scoped>
