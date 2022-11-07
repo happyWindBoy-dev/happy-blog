@@ -2,12 +2,14 @@
   <div class="flex items-center justify-between">
     <div class="w-700px">
       <n-input
-        class="title-input w-300px"
         v-model:value="title"
+        class="title-input w-300px"
         type="text"
         placeholder="Enter your title"
       />
     </div>
+
+    <p class="edit-status-text">{{ editStatusText }}</p>
 
     <n-button
       round
@@ -28,9 +30,11 @@ import { useFetch } from '@vueuse/core';
 import { useGetRequest, host } from '../hooks/useToFetch';
 import VueMarkdownEditor, { xss } from '@kangc/v-md-editor';
 import { useRouter } from 'vue-router';
+import { debounce } from 'lodash-es';
 
 const inputTitle = ref('');
 const inputContent = ref('');
+const editStatusText = ref('');
 
 const router = useRouter();
 const articleId = router.currentRoute.value.query.id;
@@ -42,8 +46,13 @@ const title = computed({
   },
   set(value: string) {
     inputTitle.value = value;
+    autoSaveEditDebounce();
   },
 });
+
+const autoSaveEditDebounce = debounce(() => {
+  articleId && updateOldArticle();
+}, 1000);
 
 const content = computed({
   get() {
@@ -51,6 +60,8 @@ const content = computed({
   },
   set(value: string) {
     inputContent.value = value;
+    // 自动保存
+    autoSaveEditDebounce();
   },
 });
 
@@ -106,6 +117,7 @@ async function updateOldArticle() {
     )
   );
 
+  editStatusText.value = '自动保存中...';
   const { data } = await useFetch(`${host}/api/article/update`)
     .post({
       id: articleId,
@@ -115,7 +127,14 @@ async function updateOldArticle() {
       html_content: htmlContent,
     })
     .json();
-  alert(data.value ? '更新成功' : '更新失败');
+
+  // @TODO: 后期需要在接口内返回状态码
+  const success = !!data.value;
+  if (success) {
+    editStatusText.value = new Date().toLocaleString() + '更新成功';
+  } else {
+    editStatusText.value = '更新失败';
+  }
 }
 </script>
 

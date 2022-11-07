@@ -5,6 +5,8 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AddBtn: typeof import('./src/components/AddBtn.vue')['default']
+    'AddBtn copy': typeof import('./src/components/AddBtn copy.vue')['default']
     AuthorCard: typeof import('./src/components/AuthorCard.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     ListItem: typeof import('./src/components/ListItem.vue')['default']
@@ -12,8 +14,12 @@ declare module '@vue/runtime-core' {
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NIcon: typeof import('naive-ui')['NIcon']
     NInput: typeof import('naive-ui')['NInput']
+    NSwitch: typeof import('naive-ui')['NSwitch']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ThemeBtn: typeof import('./src/components/ThemeBtn.vue')['default']
+    ToggleThemeBtn: typeof import('./src/components/toggleThemeBtn.vue')['default']
+    TroggleThemeBtn: typeof import('./src/components/troggleThemeBtn.vue')['default']
   }
 }
 

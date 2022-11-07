@@ -45,11 +45,12 @@
   --syntax-fn: #3d5afe;
   --prefers-dark: false;
 
-  --color-background-2: #f6f4f0;
+  --color-background-2: #f4f5f5;
   --color-text-2: #2b2d42;
   --color-text-title: #2b2d41;
   --color-text-secondary: #797b8f;
   --color-background-primary-btn: #2b2d42;
+  --color-background-secondary-btn: #ea4c89;
   --color-text-btn: #30303b;
   --color-border: #d5d5d4;
 }
@@ -108,6 +109,7 @@ html[class='dark'] {
   // #6d778b
   --color-text-secondary: #797b8f;
   --color-background-primary-btn: #2b2d42;
+  --color-background-secondary-btn: #ea4c89;
   --color-text-btn: #30303b;
   --color-border: #d5d5d4;
 }

@@ -71,14 +71,14 @@ async function onDelete() {
   width: 100%;
   color: var(--color-text-2);
   margin-bottom: 20px;
+  background: var(--color-background);
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
-  /* &:hover {
-    background-color: var(--color-venn-1);
+  &:hover {
     transition: all 0.2s;
-  } */
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  }
 
   .title {
     font-size: 22px;
