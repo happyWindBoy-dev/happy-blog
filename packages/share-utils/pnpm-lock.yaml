@@ -2,9 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   '@vueuse/core': ^8.3.1
+  lodash-es: ^4.17.21
 
 dependencies:
   '@vueuse/core': 8.3.1
+  lodash-es: 4.17.21
 
 packages:
 
@@ -40,6 +42,10 @@ packages:
         optional: true
     dependencies:
       vue-demi: 0.12.5
+    dev: false
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: false
 
   /vue-demi/0.12.5:

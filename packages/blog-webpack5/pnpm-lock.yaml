@@ -7,6 +7,7 @@ specifiers:
   clean-webpack-plugin: ^4.0.0
   css-loader: ^6.7.1
   html-webpack-plugin: ^5.5.0
+  lodash-es: ^4.17.21
   node-sass: ^7.0.1
   sass-loader: ^12.6.0
   style-loader: ^3.3.1
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   '@sentry/tracing': 6.19.7
   '@sentry/vue': 6.19.7_vue@3.2.33
+  lodash-es: 4.17.21
   vue: 3.2.33
   vue-router: 4.0.14_vue@3.2.33
 
@@ -1379,6 +1381,7 @@ packages:
 
   /encoding/0.1.13:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    requiresBuild: true
     dependencies:
       iconv-lite: 0.6.3
     dev: true
@@ -2311,6 +2314,10 @@ packages:
     dependencies:
       p-locate: 4.1.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.sortby/4.7.0:
     resolution: {integrity: sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=}
