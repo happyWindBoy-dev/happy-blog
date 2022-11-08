@@ -7,7 +7,7 @@
         alt="cover_img"
       />
     </div>
-    <div>
+    <div class="w-50 flex-auto">
       <AuthorCard :detail="detail" />
       <p class="title font-semibold my-4">
         {{ detail?.title }}
